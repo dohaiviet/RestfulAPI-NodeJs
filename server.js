@@ -14,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+mongoose.set("strictQuery", false)
 mongoose.connect(uri)
     .then(() => {
         console.log('connected to MongoDB')
